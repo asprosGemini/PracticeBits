@@ -34,7 +34,7 @@ func runBit04_Enums() {
     checkAnswer("4.3", isBad, equals: true)
 
     // 4.4 Change ONE thing so this equals "Status: warning"
-    let label = "Status: \(Status.warning)"
+    let label = "Status: \(Status.warning.rawValue)"
     checkAnswer("4.4", label, equals: "Status: warning")
 
     print("\n✅ Done with PB-4A — Enums (Warmup)\n")

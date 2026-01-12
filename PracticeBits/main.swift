@@ -7,4 +7,4 @@
 
 import Foundation
 
-runBit04_Enums()
+runBit04B_Enums_Switch()
