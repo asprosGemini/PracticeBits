@@ -7,4 +7,4 @@
 
 import Foundation
 
-runBit03_DoublesAndBooleans()
+runBit04_Enums()
