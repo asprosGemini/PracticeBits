@@ -7,4 +7,4 @@
 
 import Foundation
 
-runBit05_ErrorHandling()
+runBit06_Collections()
