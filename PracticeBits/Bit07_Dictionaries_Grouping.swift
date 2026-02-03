@@ -114,6 +114,7 @@ func runBit07_Dictionaries_Grouping() {
     // ------------------------------------------------------------
     // EX 7.8 (Hard) — Build a lookup table from an array
     // Goal: lookupById[2]?.name == "Betssy", lookupById[99] == nil
+    // checked on 2.1.2026
     // ------------------------------------------------------------
     struct Person {
         let id: Int
@@ -129,7 +130,7 @@ func runBit07_Dictionaries_Grouping() {
     var lookupById: [Int: Person] = [:]
     for p in people {
         // TODO: FIX key/value so dictionary maps id -> Person
-        lookupById[0] = p
+        lookupById[p.id] = p
     }
 
     print("7.8 Lookup 2:", lookupById[2]?.name ?? "nil")
@@ -145,13 +146,14 @@ func runBit07_Dictionaries_Grouping() {
     // capped["wind"] == 2 (because 5 capped to 2)
     // capped["rain"] == 1 (unchanged)
     // capped["freeze"] == 2 (because 3 capped to 2)
+    // checked 2.1.2026
     // ------------------------------------------------------------
     let requestedPerType: [String: Int] = ["wind": 5, "rain": 1, "freeze": 3]
     let maxPerType = 2
 
     let capped = requestedPerType.mapValues { count in
         // TODO: FIX to return min(count, maxPerType)
-        return count
+        return min(count, maxPerType)
     }
 
     print("7.9 Capped:", capped)
@@ -171,6 +173,6 @@ func runBit07_Dictionaries_Grouping() {
     let hotCount = (groupedTemps["hot"] ?? []).count
     let coldCount = (groupedTemps["cold"] ?? []).count
 
-    let status = (hotCount == 0 && coldCount == 0) ? "RISK" : "ALL CLEAR" // TODO: FIX logic
+    let status = (hotCount > 0 && coldCount > 0) ? "RISK" : "ALL CLEAR" // TODO: FIX logic
     print("7.10 Status:", status)
 }
