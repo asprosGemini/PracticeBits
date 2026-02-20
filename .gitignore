@@ -1,0 +1,6 @@
+
+# Xcode user state (do not commit)
+xcuserdata/
+**/xcuserdata/
+*.xcuserstate
+**/*.xcuserstate
